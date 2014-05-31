@@ -32,6 +32,10 @@ libsubstrate.dylib: Hooker.o DarwinFindSymbol.o ObjectiveC.o Debug.o PosixMemory
 clean:
 	rm *.o
 
+install:
+	cp libsubstrate.dylib /opt/local/lib
+	cp CydiaSubstrate.h /opt/local/include
+
 hde64.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c hde64c/src/hde64.c
 
@@ -40,3 +44,4 @@ hde64.o:
 
 .c.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $<
+
